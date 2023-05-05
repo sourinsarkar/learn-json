@@ -91,10 +91,26 @@
 
         // Exception:
 
-        const meraObj = {name:"Sourin", age: function() {return 30;}, place: "Ramgarh"};
-        meraObj.age = meraObj.age.toString();
-        const meraJSON = JSON.stringify(meraObj);
-        console.log(meraJSON);
+        // const meraObj = {name:"Sourin", age: function() {return 30;}, place: "Ramgarh"};
+        // meraObj.age = meraObj.age.toString();
+        // const meraJSON = JSON.stringify(meraObj);
+        // console.log(meraJSON);
+
+        // -------------------------
+
+        // Implementing for-in loop
+
+
+        const meraJSON = '{"name":"Sourin", "age":21, "place":"Ramgarh"}';
+        const meraObj = JSON.parse(meraJSON);
+
+        let text = ' ';
+        for(const x in meraObj) {
+            // text += x + ', ';
+            text += meraObj[x] + ', ';  
+        }
+
+        document.getElementById("someText").innerHTML = text;
 
 
     </script>
