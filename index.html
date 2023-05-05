@@ -10,9 +10,17 @@
         <h1 id="someText"></h1>
 
         <script>
-            const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh"}';
-            const obj = JSON.parse(txt);
-            document.getElementById("someText").innerHTML = obj.name + " is " + obj.age + " years old and he is from " + obj.city + '.';
+            // Parsing to an object
+            // const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh"}';
+            // const obj = JSON.parse(txt);
+            // document.getElementById("someText").innerHTML = obj.name + " is " + obj.age + " years old and he is from " + obj.city + '.';
+
+            // ---------------------
+
+            //Array as JSON
+            const txt = '["Sourin", "Sheetal", "Kangana", "Nalini", "Tahama"]';
+            const txtArr = JSON.parse(txt);
+            document.getElementById("someText").innerHTML = txtArr[1] + ' ' + txtArr[3];
         </script>
     </body>
 </html>
