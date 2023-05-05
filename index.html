@@ -36,17 +36,24 @@
             // ---------------------
 
             // The JSON data present above and parsing it using REVIVER paramter
-            const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh", "date":"2023-05-04"}';
-            const obj = JSON.parse(txt, function(key, value) {
-                if(key === "date") {
-                    return new Date(value);
-                } else {
-                    return value;
-                }
-            });
+            // const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh", "date":"2023-05-04"}';
+            // const obj = JSON.parse(txt, function(key, value) {
+            //     if(key === "date") {
+            //         return new Date(value);
+            //     } else {
+            //         return value;
+            //     }
+            // });
 
-            document.getElementById("someText").innerHTML = obj.name + "! Today is " + obj.date + '.';
+            // document.getElementById("someText").innerHTML = obj.name + "! Today is " + obj.date + '.';
+            
+            // ----------------------
 
+            // Parsing Functions present in JSON format
+            const txt = '{"name":"Sourin", "age":21, "agee":"function() {return 30;}", "city":"Ramgarh", "date":"2023-05-04"}';
+            const obj = JSON.parse(txt);
+            obj.agee = eval("(" + obj.agee + ")");
+            document.getElementById("someText").innerHTML = obj.agee();
         </script>
     </body>
 </html>
