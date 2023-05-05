@@ -86,6 +86,17 @@
         // let text = localStorage.getItem("testJSON");
         // let obj = JSON.parse(text);
         // document.getElementById("someText").innerHTML = obj.name;
+
+        // ------------------------
+
+        // Exception:
+
+        const meraObj = {name:"Sourin", age: function() {return 30;}, place: "Ramgarh"};
+        meraObj.age = meraObj.age.toString();
+        const meraJSON = JSON.stringify(meraObj);
+        console.log(meraJSON);
+
+
     </script>
 </body>
 
