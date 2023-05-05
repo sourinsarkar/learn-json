@@ -1,65 +1,92 @@
 <!DOCTYPE html>
 <html land="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Learning JSON</title>
-    </head>
-    <body>
-        <h1 id="someText"></h1>
 
-        <script>
-            // Parsing to an object
-            // const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh"}';
-            // const obj = JSON.parse(txt);
-            // document.getElementById("someText").innerHTML = obj.name + " is " + obj.age + " years old and he is from " + obj.city + '.';
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JSON</title>
+</head>
 
-            // ---------------------
+<body>
+    <h1 id="someText"></h1>
 
-            //Array as JSON
-            // const txt = '["Sourin", "Sheetal", "Kangana", "Nalini", "Tahama"]';
-            // const txtArr = JSON.parse(txt);
-            // document.getElementById("someText").innerHTML = txtArr[1] + ' ' + txtArr[3];
+    <script>
+        // Parsing to an object
+        // const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh"}';
+        // const obj = JSON.parse(txt);
+        // document.getElementById("someText").innerHTML = obj.name + " is " + obj.age + " years old and he is from " + obj.city + '.';
 
-            // ---------------------
+        // ---------------------
 
-            //Parsing DATE
-            // Write DATE as string and convert it back to DATE OBJECT later.
-            
-            // const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh", "date":"2023-05-04"}';
-            // const obj = JSON.parse(txt);
-            // obj.date = new Date(obj.date);
+        //Array as JSON
+        // const txt = '["Sourin", "Sheetal", "Kangana", "Nalini", "Tahama"]';
+        // const txtArr = JSON.parse(txt);
+        // document.getElementById("someText").innerHTML = txtArr[1] + ' ' + txtArr[3];
 
-            // document.getElementById("someText").innerHTML = obj.date;
+        // ---------------------
 
-            // ---------------------
+        //Parsing DATE
+        // Write DATE as string and convert it back to DATE OBJECT later.
 
-            // The JSON data present above and parsing it using REVIVER paramter
-            // const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh", "date":"2023-05-04"}';
-            // const obj = JSON.parse(txt, function(key, value) {
-            //     if(key === "date") {
-            //         return new Date(value);
-            //     } else {
-            //         return value;
-            //     }
-            // });
+        // const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh", "date":"2023-05-04"}';
+        // const obj = JSON.parse(txt);
+        // obj.date = new Date(obj.date);
 
-            // document.getElementById("someText").innerHTML = obj.name + "! Today is " + obj.date + '.';
-            
-            // ----------------------
+        // document.getElementById("someText").innerHTML = obj.date;
 
-            // Parsing Functions present in JSON format
-            // const txt = '{"name":"Sourin", "age":21, "agee":"function() {return 30;}", "city":"Ramgarh", "date":"2023-05-04"}';
-            // const obj = JSON.parse(txt);
-            // obj.agee = eval("(" + obj.agee + ")");
-            // document.getElementById("someText").innerHTML = obj.agee();
+        // ---------------------
 
-            //----------------------- STRINGFY -- STARTS here ---------------------
+        // The JSON data present above and parsing it using REVIVER paramter
+        // const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh", "date":"2023-05-04"}';
+        // const obj = JSON.parse(txt, function(key, value) {
+        //     if(key === "date") {
+        //         return new Date(value);
+        //     } else {
+        //         return value;
+        //     }
+        // });
 
-            const obj = {name:"Sourin", age:20, place: "Ramagrh"};
-            const objString = JSON.stringify(obj);
-            console.log(objString);
-        </script>
-    </body>
+        // document.getElementById("someText").innerHTML = obj.name + "! Today is " + obj.date + '.';
+
+        // ----------------------
+
+        // Parsing Functions present in JSON format
+        // const txt = '{"name":"Sourin", "age":21, "agee":"function() {return 30;}", "city":"Ramgarh", "date":"2023-05-04"}';
+        // const obj = JSON.parse(txt);
+        // obj.agee = eval("(" + obj.agee + ")");
+        // document.getElementById("someText").innerHTML = obj.agee();
+
+        //----------------------- STRINGFY -- STARTS here ---------------------
+
+        // Basic STRINGFY implementatio
+
+        // const obj = {name:"Sourin", age:20, place: "Ramagrh"};
+        // const objString = JSON.stringify(obj);
+        // console.log(objString);
+
+        // -----------------------
+
+        // Parsing an array
+
+        // const arr = ["Sourin", "Sheetal", "Kangana", "Nalini", "Tahama"];
+        // const arrString = JSON.stringify(arr);
+        // console.log(arrString);
+
+        // ------------------------
+
+        // Storing data
+
+        // const meraObj = {name: "Sourin", age: 21, place: "Ramgarh"};
+        // const meraJSON = JSON.stringify(meraObj);
+        // localStorage.setItem("testJSON", meraJSON);
+        
+        // Retrieving data
+
+        // let text = localStorage.getItem("testJSON");
+        // let obj = JSON.parse(text);
+        // document.getElementById("someText").innerHTML = obj.name;
+    </script>
+</body>
+
 </html>
