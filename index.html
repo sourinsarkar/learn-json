@@ -26,7 +26,12 @@
 
             //Parsing DATE
             // Write DATE as string and convert it back to DATE OBJECT later.
-            //const txt = 
+            
+            const txt = '{"name":"Sourin", "age":21, "city":"Ramgarh", "date":"2023-05-04"}';
+            const obj = JSON.parse(txt);
+            obj.date = new Date(obj.date);
+
+            document.getElementById("someText").innerHTML = obj.date;
         </script>
     </body>
 </html>
