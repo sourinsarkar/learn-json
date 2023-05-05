@@ -50,10 +50,16 @@
             // ----------------------
 
             // Parsing Functions present in JSON format
-            const txt = '{"name":"Sourin", "age":21, "agee":"function() {return 30;}", "city":"Ramgarh", "date":"2023-05-04"}';
-            const obj = JSON.parse(txt);
-            obj.agee = eval("(" + obj.agee + ")");
-            document.getElementById("someText").innerHTML = obj.agee();
+            // const txt = '{"name":"Sourin", "age":21, "agee":"function() {return 30;}", "city":"Ramgarh", "date":"2023-05-04"}';
+            // const obj = JSON.parse(txt);
+            // obj.agee = eval("(" + obj.agee + ")");
+            // document.getElementById("someText").innerHTML = obj.agee();
+
+            //----------------------- STRINGFY -- STARTS here ---------------------
+
+            const obj = {name:"Sourin", age:20, place: "Ramagrh"};
+            const objString = JSON.stringify(obj);
+            console.log(objString);
         </script>
     </body>
 </html>
